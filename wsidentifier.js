@@ -64,27 +64,27 @@ export function wsIdentifier(mutationsList, observer) {
             }
 
             const setAll = () => {
-              const file = loadFile("https://node.supsign.dev/file");
-              console.log("file :", file);
-              var myRequest = new XMLHttpRequest();
-              myRequest.open(
-                "POST",
-                "https://cloud.myfactory-ondemand.ch/saas/ie50/base/documents/upload/documentUploadProcessMulti.aspx" +
-                  "?ClientID=" +
-                  msClientID,
-                false
-              );
+              // const file = loadFile("https://node.supsign.dev/file");
+              // console.log("file :", file);
+              // var myRequest = new XMLHttpRequest();
+              // myRequest.open(
+              //   "POST",
+              //   "https://cloud.myfactory-ondemand.ch/saas/ie50/base/documents/upload/documentUploadProcessMulti.aspx" +
+              //     "?ClientID=" +
+              //     msClientID,
+              //   false
+              // );
 
-              var formData = new FormData();
+              // var formData = new FormData();
 
-              formData.append("System", false);
-              formData.append("Type", -1);
-              formData.append("DialogType", "Quickdrop");
-              formData.append("Group:", undefined);
-              formData.append("AllDivisions", true);
-              formData.append("AllPermissions", true);
-              formData.append("Public", false);
-              formData.append("SubDir", undefined);
+              // formData.append("System", false);
+              // formData.append("Type", -1);
+              // formData.append("DialogType", "Quickdrop");
+              // formData.append("Group:", undefined);
+              // formData.append("AllDivisions", true);
+              // formData.append("AllPermissions", true);
+              // formData.append("Public", false);
+              // formData.append("SubDir", undefined);
 
               // // HTML file input, chosen by user
               // formData.append("userfile", fileInputElement.files[0]);
@@ -93,30 +93,35 @@ export function wsIdentifier(mutationsList, observer) {
               // var content = '<a id="a"><b id="b">hey!</b></a>'; // the body of the new file...
               // var blob = new Blob([content], { type: "text/xml" });
 
-              formData.append("file", file);
+              // formData.append("file", file);
 
               // var request = new XMLHttpRequest();
               // request.open("POST", "http://foo.com/submitform.php");
-              myRequest.send(formData);
-              // for (const element of mailElements1) {
-              //   let selector = element.childNodes[1].childNodes[0];
-              // }
-              // for (const element of mailElements) {
-              //   let selector = element.childNodes[1].childNodes[0];
-              //   console.log("selector :", selector.constructor.name);
-              //   if (selector.value !== aspId) {
-              //     selector.value = aspId;
-              //     selector.dispatchEvent(new Event("change"));
-              //   }
-              // }
-              // for (const belegId of belegIds) {
-              //   iFrameNode.contentWindow.mOnListViewCboChange(
-              //     "lstMain",
-              //     "Contact",
-              //     belegId,
-              //     aspId
-              //   );
-              // }
+              // myRequest.send(formData);
+              for (const element of mailElements1) {
+                let selector = element.childNodes[1].childNodes[0];
+                console.log("selector :", selector.constructor.name);
+                if (selector.value !== aspId) {
+                  selector.value = aspId;
+                  selector.dispatchEvent(new Event("change"));
+                }
+              }
+              for (const element of mailElements) {
+                let selector = element.childNodes[1].childNodes[0];
+                console.log("selector :", selector.constructor.name);
+                if (selector.value !== aspId) {
+                  selector.value = aspId;
+                  selector.dispatchEvent(new Event("change"));
+                }
+              }
+              for (const belegId of belegIds) {
+                iFrameNode.contentWindow.mOnListViewCboChange(
+                  "lstMain",
+                  "Contact",
+                  belegId,
+                  aspId
+                );
+              }
             };
 
             const buttonElement = iFrameNode.contentWindow.document.getElementById(

@@ -1,0 +1,15 @@
+{
+  "content_scripts": [
+    {
+      "matches": ["https://cloud.myfactory-ondemand.ch/saas/ie50/system/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "fastOrder.js",
+    "main.js",
+    "loader.js",
+    "wsidentifier.js",
+    "*"
+  ]
+}

@@ -7,8 +7,6 @@ export function load(onChangeFunction, element) {
     element = document.getElementById(element);
   }
 
-  // console.log("element :", element);
-
   if (!element) {
     return;
   }

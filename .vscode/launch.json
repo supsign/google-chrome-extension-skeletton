@@ -9,7 +9,7 @@
       "request": "attach",
       "name": "Chrome Extension debugging",
       "port": 9222,
-      "url": "https://cloud.myfactory-ondemand.ch/saas/ie50/system/workplace50/workplacemain.aspx?ClientID=wf1f9e9d64-50f0-48c0-a9e5-9f02723ee2ce",
+      "url": "https://cloud.myfactory-ondemand.ch/saas/ie50/system/workplace50/workplacemain.aspx?ClientID=wf63582de6-0720-42f6-9b88-1f79e6ecbe61",
       "webRoot": "${workspaceFolder}"
     }
   ]
